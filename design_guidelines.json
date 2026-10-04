@@ -1,0 +1,168 @@
+{
+  "app_name": "Aplikasi Absensi Karyawan",
+  "personality": "1 iOS-Native Clean",
+  "personality_one_liner": "A professional, trustworthy, and clear interface driven by a corporate blue palette and iOS-native structures.",
+  "color": {
+    "surface": "#FFFFFF",
+    "onSurface": "#111827",
+    "surfaceSecondary": "#F8FAFC",
+    "onSurfaceSecondary": "#334155",
+    "surfaceTertiary": "#F1F5F9",
+    "onSurfaceTertiary": "#475569",
+    "surfaceInverse": "#1E293B",
+    "onSurfaceInverse": "#FFFFFF",
+    "brand": "#1D4ED8",
+    "onBrand": "#FFFFFF",
+    "brandPrimary": "#2563EB",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#3B82F6",
+    "onBrandSecondary": "#FFFFFF",
+    "brandTertiary": "#DBEAFE",
+    "onBrandTertiary": "#1E3A8A",
+    "success": "#10B981",
+    "onSuccess": "#FFFFFF",
+    "warning": "#F59E0B",
+    "onWarning": "#FFFFFF",
+    "error": "#EF4444",
+    "onError": "#FFFFFF",
+    "info": "#3B82F6",
+    "onInfo": "#FFFFFF",
+    "border": "#E2E8F0",
+    "borderStrong": "#CBD5E1",
+    "divider": "#F1F5F9",
+    "muted": "#64748B"
+  },
+  "typography": {
+    "displayFontFamily": "Plus Jakarta Sans",
+    "textFontFamily": "Plus Jakarta Sans",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Handle spacing correctly dont have extra spaces where its not required, handle padding and margin corectly and subtle for buttons and components",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": "1",
+  "navigation": "bottom_tabs",
+  "icon_set": "Ionicons",
+  "glassmorphism": {
+    "enabled": "true",
+    "do's": [
+      "refer to <Glassmorphism_and_Blur>"
+    ],
+    "dont's": [
+      "refer to <Glassmorphism_and_Blur>"
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Login",
+      "purpose": "Secure authentication via email/password.",
+      "states": {
+        "loading": "Centered spinner over button",
+        "empty": "",
+        "error": "Show error message above inputs"
+      },
+      "layout": "Hero image of office building with top-to-bottom gradient scrim. Large 'Welcome Back' title. Email, Password input fields. Big brandPrimary CTA for 'Login', textual CTA for 'Register'."
+    },
+    {
+      "name": "Home",
+      "purpose": "View geolocation status and perform biometric check-in/out.",
+      "states": {
+        "loading": "Skeleton for hero card and geolocation",
+        "empty": "",
+        "error": "Geofencing error shown on hero card with retry"
+      },
+      "layout": "Header with user greeting and avatar. Hero Card showing Geolocation Status (Text: Inside Office Area, Distance: 10m - using success/warning colors appropriately). Large, prominent circular or pill button for Biometric Check In/Out (Face ID/Fingerprint). Sticky CTA behavior for the main Punch button at the bottom."
+    },
+    {
+      "name": "Riwayat Absen",
+      "purpose": "View attendance history per date.",
+      "states": {
+        "loading": "List skeletons",
+        "empty": "Illustration of empty clipboard with 'Belum ada riwayat absensi' text.",
+        "error": "Error loading history with retry button"
+      },
+      "layout": "Pinned filter row (glass bg) at the top for selecting date/month. Scrollable list of cards. Each card = Date, Status Badge (Hadir/Absen/Terlambat), Check-in Time, Check-out time."
+    },
+    {
+      "name": "Profile",
+      "purpose": "Display employee profile data.",
+      "states": {
+        "loading": "Profile skeleton",
+        "empty": "",
+        "error": "Failed to load profile"
+      },
+      "layout": "Cover photo (office building blurred) + Avatar overlap. Employee details (Name, Position, ID, Dept) stacked in clean surfaceSecondary cards."
+    },
+    {
+      "name": "Setting",
+      "purpose": "Enroll face/fingerprint biometric (max 1) and logout.",
+      "states": {
+        "loading": "Rows skeleton",
+        "empty": "",
+        "error": "Failed to load settings"
+      },
+      "layout": "List of settings rows (Biometric Fingerprint, Biometric Face). Text indicating '1 Enrolled' or 'Not Enrolled'. Tapping row enrolls the biometric (using built in LocalAuthentication). Logout button at the bottom (danger color)."
+    }
+  ],
+  "images": {
+    "office_building_exterior": {
+      "url": "https://images.unsplash.com/photo-1576731753569-3e93a228048c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBjb3Jwb3JhdGUlMjBvZmZpY2UlMjBidWlsZGluZyUyMGV4dGVyaW9yfGVufDB8fHx8MTc5MTA4NzIxNnww&ixlib=rb-4.1.0&q=85",
+      "alt": "A modern glass office building corner against a clear deep blue sky"
+    },
+    "empty_clipboard": {
+      "url": "https://images.unsplash.com/photo-1651760680066-db9d32bd0357?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxlbXB0eSUyMGNhbGVuZGFyJTIwY2xpcGJvYXJkfGVufDB8fHx8MTc5MTA4NzIxNnww&ixlib=rb-4.1.0&q=85",
+      "alt": "a white framed picture clipboard"
+    },
+    "employee_portrait": {
+      "url": "https://images.pexels.com/photos/33605541/pexels-photo-33605541.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "alt": "Smiling young adult man in formal attire against dark background"
+    }
+  },
+  "haptics": {
+    "login_submit": "success",
+    "biometric_punch": "success",
+    "tab_switch": "selection",
+    "biometric_enroll": "success",
+    "logout": "warning"
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the user's choice: 'Biru profesional' (professional corporate blue) as the primary brand color.",
+    "Theme: iOS-Native Clean (Personality 1), relying on white spaces, clear typography (Plus Jakarta Sans), and subtle borders. Do not make it look muddy or overly dark.",
+    "Navigation: Ensure a bottom tab navigator with 4 tabs exactly: Home, Dashboard Absen, Profile, Setting.",
+    "Biometric Attendance (Home): Implement built-in phone biometrics (expo-local-authentication) for check-in and check-out. Ensure Geofencing status is displayed on the Hero card (text only: inside/outside area and distance).",
+    "History (Dashboard Absen): Use a list view of cards. Each card represents a date with check-in/out times. Add a glass-morphism pinned filter at the top.",
+    "Settings: Implement biometric enrollment logic, ensuring it limits to 1 Face and 1 Fingerprint per account. Display '1 Enrolled' / 'Not Enrolled' on the rows. Show 'Logout' prominently.",
+    "Ensure the hero images on Login and Profile have a gradient-to-dark scrim pattern to ensure text legibility as per the imagery rules."
+  ]
+}
